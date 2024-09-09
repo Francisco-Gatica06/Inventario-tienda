@@ -4,6 +4,7 @@ public class inventary {
     public static void main(String[] args) {
         Object[][] productos = new Object[10][3];
         ejecutarMenu(productos);
+
     }
 
     public static void ejecutarMenu(Object productos[][]){
