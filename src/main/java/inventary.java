@@ -107,7 +107,7 @@ public class inventary {
 
     public static boolean restarProductos(int idProducto, int cantidadARestar, Object[][] productos) {
         for (int i = 0; i < productos.length; i++) {
-            if (productos[i][0] != null && productos[i][0].equals(idProducto) && ) {
+            if (productos[i][0] != null && productos[i][0].equals(idProducto)) {
                 productos[i][1] = productos[i][1] - cantidadARestar;
             }
         }
