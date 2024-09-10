@@ -4,7 +4,6 @@ public class inventary {
     public static void main(String[] args) {
         Object[][] productos = new Object[10][3];
         ejecutarMenu(productos);
-
     }
 
     public static void ejecutarMenu(Object productos[][]){
@@ -70,6 +69,7 @@ public class inventary {
                 agregarProductoMenu(productos);
                 break;
             case 2:
+                restarProductosMenu(productos);
                 break;
             case 3:
                 break;
@@ -105,15 +105,27 @@ public class inventary {
         System.out.println("Producto agregado exitosamente.");
     }
 
-    public static int restarProductos(int idProducto, int cantidad, Object[][] productos) {
+    public static boolean restarProductos(int idProducto, int cantidadARestar, Object[][] productos) {
         for (int i = 0; i < productos.length; i++) {
-            if (productos[i][0] != null && productos[i][0].equals(idProducto)) {
-                productos[i][1] = cantidad;
+            if (productos[i][0] != null && productos[i][0].equals(idProducto) && ) {
+                productos[i][1] = productos[i][1] - cantidadARestar;
             }
         }
+    }
+
+    public static void restarProductosMenu(Object[][] productos) {
+        int id = leerEntero("Ingrese el id del producto: ");
+        int cantidadARestar = leerEntero("Ingrese la cantidad de producto que quiere quitar: ");
+
+        if (restarProductos(id, cantidadARestar, productos)) {
+            System.out.println("Producto agregado exitosamente.");
+        } else {
+            System.out.println("Producto no existe.");
+        }
+
 
     }
-//
+
 //    public static int consultarDisponibiliad(int idProducto) {}
 
     public static void listarProductos(Object[][] productos) {
